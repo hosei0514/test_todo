@@ -12,7 +12,7 @@ class TodoTableSeeder extends Seeder
     public function run()
     {
         //
-        $bodys = ['JCBギフト券を換金する','ゼルダの伝説をする','conohaのVPSで立ち上げをする'];
+        $bodys = ['笑おう','自由に入力してください','お餅が食べたい'];
         foreach ($bodys as $body) {
         DB::table('todos')->insert([
             'body' => $body,
