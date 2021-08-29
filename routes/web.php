@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//以下をコメントアウトする
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('/','TodosController@index');
+Route::resource('todos','TodosController');
