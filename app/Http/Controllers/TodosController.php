@@ -16,11 +16,11 @@ class TodosController extends Controller
         $todo = new Todo();
         $todo->body = $request->body;
         $todo->save();
-        return redirect('/');
+        return redirect('/todo/create');
     }
     public function destroy(todo $todo) {
         $todo->delete();
-        return redirect('/');
+        return redirect('/todo/delete');
     }
     public function edit(todo $todo) {
         return view('todos.edit')->with('todo',$todo);
@@ -28,7 +28,15 @@ class TodosController extends Controller
     public function update(Request $request,todo $todo) {
         $todo->body = $request->body;
         $todo->save();
-        return redirect('/');
+        return redirect('/todo/update');
+    }
+    public function post(Request $request)
+    {
+        $validate_rule = [
+            'name' => 'size:20',
+        ];
+        $this->validate($request, $validate_rule);
+        return view('index', ['txt' => '正しい入力です']);
     }
     //追加
 }

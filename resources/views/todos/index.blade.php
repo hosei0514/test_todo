@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
   <body>
+    <body style="background-color:darkslateblue;">
     <div class="container" style="margin-top:50px;">
     <h1>Todo List</h1>
 
@@ -16,8 +17,10 @@
       {{csrf_field()}}
   <div class="form-group">
     <input type="text" name="body"class="form-control" placeholder="todo list" style="max-width:1000px;">
+
   </div>
-  <button type="submit" class="btn btn-primary">追加</button>  </form>
+  <button type="submit" class="btn btn-primary">追加</button>
+  </form>
 
     <h1 style="margin-top:50px;">タスク名</h1>
     <table class="table table-striped" style="max-width:1000px; margin-top:20px;">
