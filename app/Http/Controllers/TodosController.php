@@ -30,5 +30,13 @@ class TodosController extends Controller
         $todo->save();
         return redirect('/');
     }
+    public function post(Request $request)
+    {
+        $validate_rule = [
+            'name' => 'size:20',
+        ];
+        $this->validate($request, $validate_rule);
+        return view('index', ['txt' => '正しい入力です']);
+    }
     //追加
 }
